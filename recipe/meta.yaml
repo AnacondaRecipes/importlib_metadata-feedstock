@@ -1,4 +1,4 @@
-{% set version = "4.6.4" %}
+{% set version = "4.8.1" %}
 
 package:
   name: importlib-metadata
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/importlib_metadata/importlib_metadata-{{ version }}.tar.gz
-  sha256: 7b30a78db2922d78a6f47fb30683156a14f3c6aa5cc23f77cc8967e9ab2d002f
+  sha256: f284b3e11256ad1e5d03ab86bb2ccd6f5339688ff17a4d797a0fe7df326f23b1
 
 build:
   number: 0
@@ -51,7 +51,7 @@ about:
   license_file: LICENSE
   summary: A library to access the metadata for a Python package
   dev_url: https://github.com/python/importlib_metadata
-  doc_url: https://importlib-metadata.readthedocs.io/
+  doc_url: https://importlib-metadata.readthedocs.io/en/latest
 
 extra:
   recipe-maintainers:
