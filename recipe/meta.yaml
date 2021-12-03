@@ -49,7 +49,7 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: A library to access the metadata for a Python package
+  summary: A library to access the metadata for a Python package.
   dev_url: https://github.com/python/importlib_metadata
   doc_url: https://importlib-metadata.readthedocs.io/en/latest
 
