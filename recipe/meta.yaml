@@ -10,8 +10,7 @@ source:
 
 build:
   number: 0
-  # trigger: 1
-  skip: True # [py<36]
+  skip: True # [py<37]
 
 outputs:
   - name: importlib-metadata
@@ -24,7 +23,7 @@ outputs:
         - setuptools_scm >=3.4.1,!=6.1.0
         - toml
       run:
-        - python >=3.6
+        - python >=3.7
         - typing_extensions >=3.6.4  # [py<38]
         - zipp >=0.5
     test:
