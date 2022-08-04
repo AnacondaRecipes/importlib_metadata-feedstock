@@ -9,7 +9,7 @@ source:
   sha256: ea4c597ebf37142f827b8f39299579e31685c31d3a438b59f469406afd0f2539
 
 build:
-  number: 0
+  number: 1
   skip: True # [py<37]
 
 outputs:
@@ -23,7 +23,7 @@ outputs:
         - setuptools_scm >=3.4.1,!=6.1.0
         - toml
       run:
-        - python >=3.7
+        - python
         - typing_extensions >=3.6.4  # [py<38]
         - zipp >=0.5
     test:
