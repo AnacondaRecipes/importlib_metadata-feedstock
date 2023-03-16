@@ -14,7 +14,8 @@ build:
 
 outputs:
   - name: importlib-metadata
-    script: build_base.sh
+    script: build_base.sh  # [unix]
+    script: build_base.bat  # [win]
     requirements:
       host:
         - python
