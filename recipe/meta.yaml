@@ -20,7 +20,7 @@ outputs:
       host:
         - python
         - pip
-        - setuptool
+        - setuptools
         - setuptools_scm
         - toml
         - wheel
