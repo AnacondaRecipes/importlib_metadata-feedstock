@@ -1,4 +1,4 @@
-{% set version = "4.11.3" %}
+{% set version = "6.0.0" %}
 
 package:
   name: importlib-metadata
@@ -6,24 +6,26 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/importlib_metadata/importlib_metadata-{{ version }}.tar.gz
-  sha256: ea4c597ebf37142f827b8f39299579e31685c31d3a438b59f469406afd0f2539
+  sha256: e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d
 
 build:
   number: 0
-  skip: True # [py<37]
+  skip: True # [py<38]
 
 outputs:
   - name: importlib-metadata
-    script: build_base.sh
+    script: build_base.sh  # [unix]
+    script: build_base.bat  # [win]
     requirements:
       host:
         - python
         - pip
-        - setuptools >=56
-        - setuptools_scm >=3.4.1,!=6.1.0
+        - setuptools
+        - setuptools_scm
         - toml
+        - wheel
       run:
-        - python >=3.7
+        - python
         - typing_extensions >=3.6.4  # [py<38]
         - zipp >=0.5
     test:
@@ -42,16 +44,19 @@ outputs:
         - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
     test:
       imports:
-        - importlib_metadata  # [not win32]
+        - importlib_metadata
 
 about:
   home: https://github.com/python/importlib_metadata
+  description: |
+    This package supplies third-party access to the functionality of importlib.metadata 
+    including improvements added to subsequent Python versions.
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
   summary: A library to access the metadata for a Python package.
   dev_url: https://github.com/python/importlib_metadata
-  doc_url: https://importlib-metadata.readthedocs.io/en/latest
+  doc_url: https://importlib-metadata.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
