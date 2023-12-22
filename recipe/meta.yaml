@@ -55,7 +55,7 @@ about:
   license_file: LICENSE
   summary: A library to access the metadata for a Python package.
   dev_url: https://github.com/python/importlib_metadata
-  doc_url: https://importlib-metadata.readthedocs.io/en/latest/
+  doc_url: https://importlib-metadata.readthedocs.io
 
 extra:
   recipe-maintainers:
