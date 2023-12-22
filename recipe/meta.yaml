@@ -1,4 +1,4 @@
-{% set version = "6.0.0" %}
+{% set version = "7.0.0" %}
 
 package:
   name: importlib-metadata
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/importlib_metadata/importlib_metadata-{{ version }}.tar.gz
-  sha256: e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d
+  sha256: 7fc841f8b8332803464e5dc1c63a2e59121f46ca186c0e2e182e80bf8c1319f7
 
 build:
   number: 0
@@ -21,12 +21,11 @@ outputs:
         - python
         - pip
         - setuptools
-        - setuptools_scm
+        - setuptools_scm >=3.4.1
         - toml
         - wheel
       run:
         - python
-        - typing_extensions >=3.6.4  # [py<38]
         - zipp >=0.5
     test:
       requires:
