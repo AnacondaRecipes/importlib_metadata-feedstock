@@ -11,39 +11,27 @@ source:
 build:
   number: 0
   skip: True # [py<38]
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
-outputs:
-  - name: importlib-metadata
-    script: build_base.sh  # [unix]
-    script: build_base.bat  # [win]
-    requirements:
-      host:
-        - python
-        - pip
-        - setuptools
-        - setuptools_scm >=3.4.1
-        - toml
-        - wheel
-      run:
-        - python
-        - zipp >=0.5
-    test:
-      requires:
-        - pip
-      commands:
-        - pip check
-      imports:
-        - importlib_metadata
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools
+    - setuptools_scm >=3.4.1
+    - toml
+    - wheel
+  run:
+    - python
+    - zipp >=0.5
 
-  - name: importlib_metadata
-    build:
-      noarch: generic
-    requirements:
-      run:
-        - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
-    test:
-      imports:
-        - importlib_metadata
+test:
+  requires:
+    - pip
+  commands:
+    - pip check
+  imports:
+    - importlib_metadata
 
 about:
   home: https://github.com/python/importlib_metadata
