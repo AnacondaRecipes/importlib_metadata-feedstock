@@ -37,12 +37,13 @@ outputs:
         - pip check
       imports:
         - {{ name_alt }}
+
   - name: {{ name_norm }}
     build:
       noarch: generic
     requirements:
       run:
-        - {{ pin_subpackage("importlib-metadata", max_pin="x.x.x") }}
+        - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
     test:
       requires:
         - pip
