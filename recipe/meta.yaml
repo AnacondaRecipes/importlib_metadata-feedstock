@@ -1,13 +1,13 @@
-{% set name = "importlib_resources" %}
+{% set name_norm = "importlib_resources" %}
 {% set name_alt = name.replace('_', '-') %}
 {% set version = "7.0.0" %}
 
 package:
-  name: {{ name }}-suite
+  name: {{ name_norm }}-suite
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name_norm[0] }}/{{ name_norm }}/{{ name_norm }}-{{ version }}.tar.gz
   sha256: 7fc841f8b8332803464e5dc1c63a2e59121f46ca186c0e2e182e80bf8c1319f7
 
 build:
@@ -34,7 +34,7 @@ outputs:
       commands:
         - pip check
       imports:
-        - {{ name }}
+        - {{ name_norm }}
   - name: {{ name_alt }}
     build:
       noarch: python
