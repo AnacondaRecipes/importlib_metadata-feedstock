@@ -16,7 +16,7 @@ build:
 
 # making this package multi output for the sole purpose of allowing both '-' and '_' naming conventions
 outputs:
-  - name: {{ name_norm }}
+  - name: {{ name_alt }}
     script: build.sh  # [not win]
     script: build.bat  # [win]
     requirements:
@@ -36,23 +36,20 @@ outputs:
       commands:
         - pip check
       imports:
-        - {{ name_norm }}
-  - name: {{ name_alt }}
+        - {{ name_alt }}
+  - name: {{ name_norm }}
     build:
-      noarch: python
+      noarch: generic
     requirements:
-      host:
-        - python
       run:
-        - python
-        - {{ pin_subpackage("importlib_metadata", max_pin="x.x.x") }}
+        - {{ pin_subpackage("importlib-metadata", max_pin="x.x.x") }}
     test:
       requires:
         - pip
       commands:
         - pip check
       imports:
-        - {{ name_alt }}
+        - {{ name_norm }}
 
 about:
   home: https://github.com/python/importlib_metadata
