@@ -1,4 +1,4 @@
-{% set name_norm = "importlib_resources" %}
+{% set name_norm = "importlib_metadata" %}
 {% set name_alt = name_norm.replace('_', '-') %}
 {% set version = "7.0.0" %}
 
@@ -14,6 +14,7 @@ build:
   number: 0
   skip: True # [py<38]
 
+# making this package multi output for the sole purpose of allowing both '-' and '_' naming conventions
 outputs:
   - name: {{ name_norm }}
     script: ${PYTHON} -m pip install . --no-deps --no-build-isolation -vv  # [not win]
@@ -44,7 +45,7 @@ outputs:
         - python
       run:
         - python
-        - {{ pin_subpackage("importlib_resources", max_pin="x.x.x") }}
+        - {{ pin_subpackage("importlib_metadata", max_pin="x.x.x") }}
     test:
       requires:
         - pip
