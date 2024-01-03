@@ -16,7 +16,7 @@ build:
 
 # making this package multi output for the sole purpose of allowing both '-' and '_' naming conventions
 outputs:
-  - name: importlib-metadata
+  - name: {{ name_alt }}
     script: build_base.sh  # [unix]
     script: build_base.bat  # [win]
     requirements:
@@ -35,8 +35,6 @@ outputs:
         - pip
       commands:
         - pip check
-      imports:
-        - {{ name_alt }}
 
   - name: {{ name_norm }}
     build:
