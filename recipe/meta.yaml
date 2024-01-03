@@ -1,5 +1,5 @@
 {% set name_norm = "importlib_resources" %}
-{% set name_alt = name.replace('_', '-') %}
+{% set name_alt = name_norm.replace('_', '-') %}
 {% set version = "7.0.0" %}
 
 package:
