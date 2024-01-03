@@ -16,9 +16,9 @@ build:
 
 # making this package multi output for the sole purpose of allowing both '-' and '_' naming conventions
 outputs:
-  - name: {{ name_alt }}
-    script: build.sh  # [not win]
-    script: build.bat  # [win]
+  - name: importlib-metadata
+    script: build_base.sh  # [unix]
+    script: build_base.bat  # [win]
     requirements:
       host:
         - python
