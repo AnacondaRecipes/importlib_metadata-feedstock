@@ -17,8 +17,8 @@ build:
 # making this package multi output for the sole purpose of allowing both '-' and '_' naming conventions
 outputs:
   - name: {{ name_norm }}
-    script: ${PYTHON} -m pip install . --no-deps --no-build-isolation -vv  # [not win]
-    script: %PYTHON% -m pip install . --no-deps --no-build-isolation -vv  # [win]
+    script: build.sh  # [not win]
+    script: build.bat  # [win]
     requirements:
       host:
         - python
