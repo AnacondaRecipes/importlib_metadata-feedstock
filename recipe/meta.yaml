@@ -42,7 +42,6 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
-        - python
     test:
       requires:
         - pip
