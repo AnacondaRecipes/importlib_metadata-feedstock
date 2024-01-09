@@ -1,4 +1,1 @@
-build_parameters:
-  - "--suppress-variables"
-  - "--error-overlinking"
-  - "--error-overdepending"
+aggregate_branch: 3.12
