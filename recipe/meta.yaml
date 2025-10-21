@@ -1,18 +1,18 @@
 {% set name_norm = "importlib_metadata" %}
 {% set name_alt = name_norm.replace('_', '-') %}
-{% set version = "8.5.0" %}
+{% set version = "8.7.0" %}
 
 package:
   name: {{ name_norm }}-suite
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name_norm[0] }}/{{ name_norm }}/{{ name_norm }}-{{ version }}.tar.gz
-  sha256: 71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7
+  url: https://pypi.org/packages/source/{{ name_norm[0] }}/{{ name_norm }}/{{ name_norm }}-{{ version }}.tar.gz
+  sha256: d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000
 
 build:
   number: 0
-  skip: True # [py<38]
+  skip: true  # [py<38]
 
 # making this package multi output for the sole purpose of allowing both '-' and '_' naming conventions
 outputs:
@@ -35,7 +35,6 @@ outputs:
         - pip
       commands:
         - pip check
-
   - name: {{ name_norm }}
     build:
       noarch: generic
@@ -53,7 +52,7 @@ outputs:
 about:
   home: https://github.com/python/importlib_metadata
   description: |
-    This package supplies third-party access to the functionality of importlib.metadata 
+    This package supplies third-party access to the functionality of importlib.metadata
     including improvements added to subsequent Python versions.
   license: Apache-2.0
   license_family: APACHE
