@@ -35,7 +35,7 @@ outputs:
         - tests
       requires:
         - pip
-        - pytest
+        - pytest >=6,!=8.1.*
         - jaraco.test >=5.4
         - pyfakefs
       commands:
