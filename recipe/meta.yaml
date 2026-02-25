@@ -23,13 +23,12 @@ outputs:
       host:
         - python
         - pip
-        - setuptools >=61.2
+        - setuptools >=77
         - setuptools_scm >=3.4.1
         - toml
       run:
         - python
         - zipp >=3.20
-        - typing-extensions >=3.6.4  # [py<38]
     test:
       source_files:
         - tests
