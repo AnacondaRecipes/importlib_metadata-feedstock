@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<39]
+  skip: true  # [py<310]
 
 outputs:
   - name: {{ name_alt }}
@@ -35,21 +35,20 @@ outputs:
       requires:
         - pip
         - pytest >=6,!=8.1.*
-        - jaraco.test >=5.4
+        - packaging
         - pyfakefs
       commands:
         - pip check
         - python -c "from importlib.metadata import version; assert(version('{{ name_norm }}')=='{{ version }}')"
         - pytest -v tests
+      imports:
+        - {{ name_norm }}
   - name: {{ name_norm }}
     build:
       noarch: generic
     requirements:
       run:
         - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
-        - python
-      host:
-        - python
     test:
       requires:
         - pip
