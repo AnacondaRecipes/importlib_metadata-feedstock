@@ -40,7 +40,7 @@ outputs:
       commands:
         - pip check
         - python -c "from importlib.metadata import version; assert(version('{{ name_norm }}')=='{{ version }}')"
-        - pytest -v tests
+        - pytest -vv tests
       imports:
         - {{ name_norm }}
   - name: {{ name_norm }}
@@ -77,3 +77,6 @@ extra:
     - nehaljwani
     - nicoddemus
     - marcelotrevisani
+  skip-lints:
+    - missing_pip_check
+    - missing_python_build_tool
