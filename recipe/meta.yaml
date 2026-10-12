@@ -47,10 +47,10 @@ outputs:
     build:
       noarch: generic
     requirements:
+      host:
+        - python
       run:
         - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
-        - python
-      host:
         - python
     test:
       requires:
