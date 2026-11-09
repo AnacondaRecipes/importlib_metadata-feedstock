@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<310]
+  skip: true  # [py<311]
 
 outputs:
   - name: {{ name_alt }}
@@ -47,11 +47,8 @@ outputs:
     build:
       noarch: generic
     requirements:
-      host:
-        - python
       run:
         - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
-        - python
     test:
       requires:
         - pip
