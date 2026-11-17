@@ -1,6 +1,6 @@
 {% set name_norm = "importlib_metadata" %}
 {% set name_alt = name_norm.replace('_', '-') %}
-{% set version = "10.1.0" %}
+{% set version = "10.2.0" %}
 
 # making this package multi output for the sole purpose of allowing both '-' and '_' naming conventions
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name_norm[0] }}/{{ name_norm }}/{{ name_norm }}-{{ version }}.tar.gz
-  sha256: 82b04047fa09792c1a8cfeddfe08bec79e4b13c29c8469b0d3949860f61017e8
+  sha256: 9413a2029fd9ca5669d27f1386071bbfe3c7ebca0545692ec975088241fe1d79
 
 build:
   number: 0
@@ -49,6 +49,9 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('importlib-metadata', max_pin="x.x.x") }}
+        - python
+      host:
+        - python
     test:
       requires:
         - pip
