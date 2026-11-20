@@ -29,6 +29,7 @@ outputs:
       run:
         - python
         - zipp >=3.20
+        - lazy-importer >=0.1  # [py<315]
     test:
       source_files:
         - tests
